@@ -12,3 +12,14 @@ class QuestionForm(FlaskForm):
                               validators=[DataRequired(), NumberRange(1, 100, "Not a valid difficulty")])
     imp = BooleanField('imp')
     submit = SubmitField('submit')
+    
+
+class CourseForm(FlaskForm):
+    courseid = StringField('CourseId',
+                           validators=[Datarequired(),Length(min=5, max=5)])
+    coursename = TextAreaField('CourseName',
+                           validators=[Datarequired()])
+    profname = TextAreaField('ProfName',
+                           validators=[Datarequired()])
+    submit = SubmitField('submit')
+    
